@@ -1,9 +1,16 @@
 from bs4 import BeautifulSoup
-import fetch
 
 REMOVE_TAGS = ["script", "style", "noscript", "svg", "nav", "footer", "header", "aside", "form", "button", "input", "label"]
 
 def clean_html_to_text(html: str) -> str:
+    """
+    Converts raw HTML to clean text for LLM processing.
+    Strategy:
+    - remove noisy tags (script/style/etc.)
+    - try to remove nav/footer/header if present
+    - keep headings + paragraphs + list items
+    """
+
     #create a tree from the html text so we can easily traverse
     soup = BeautifulSoup(html, "html.parser")
     
@@ -34,5 +41,3 @@ def clean_html_to_text(html: str) -> str:
     text = "\n".join(chunks)
     return text
 
-test_url = "https://www.bloomcoffee.ma/"
-print(f"output of url({test_url}):\n{clean_html_to_text(fetch.fetch_html(test_url))}")
