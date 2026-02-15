@@ -3,7 +3,9 @@ import requests
 import streamlit as st
 from PIL import Image
 
-API_BASE = "https://pfa-faq-generator-production.up.railway.app/"   # change if your API runs elsewhere
+# API_BASE = "https://pfa-faq-generator-production.up.railway.app/"   # change if your API runs elsewhere
+API_BASE = "http://127.0.0.1:8000" 
+
 ENDPOINT = f"{API_BASE}/generate-faq"
 
 icon = Image.open("assets/icon.png")
@@ -81,7 +83,9 @@ st.markdown(
     <div style='text-align: center; font-size: 0.9em; color: grey;'>
         <p>© 2026 - MOHCINE EL HAKMAOUI & ANAS RIFAK</p>
         <p> 
-        <a href="https://github.com/MOHCINE-ELHAKMAOUI" target="_blank">GitHub</a>
+        <a href="https://github.com/MOHCINE-ELHAKMAOUI" target="_blank">Mohcine el hakmaoui</a>
+        |
+        <a href="https://github.com/BloatedWare" target="_blank">Anas Rifak</a>
         </p>
     </div>
     """,
