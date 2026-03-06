@@ -5,7 +5,7 @@ from pipeline.fetch import fetch_html
 from pipeline.clean import clean_html_to_text
 from pipeline.model_faq import extract_faq_with_model
 
-app = FastAPI(title="FAQ Generator (Gemini)")
+app = FastAPI(title="FAQ Generator (Groq)")
 
 class GenerateRequest(BaseModel):
     url: HttpUrl
