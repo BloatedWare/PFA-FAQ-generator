@@ -3,8 +3,8 @@ import requests
 import streamlit as st
 from PIL import Image
 
-API_BASE = "https://pfa-faq-generator-production.up.railway.app"   # change if your API runs elsewhere
-# API_BASE = "http://127.0.0.1:8000" 
+API_BASE = "https://pfa-faq-generator-production.up.railway.app"
+ 
 
 ENDPOINT = f"{API_BASE}/generate-faq"
 
