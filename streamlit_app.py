@@ -5,7 +5,7 @@ import streamlit as st
 from PIL import Image
 from dotenv import load_dotenv
 
-API_BASE = os.environ.get("API_BASE")
+API_BASE = (os.environ.get("API_BASE") or "").rstrip("/")
  
 
 ENDPOINT = f"{API_BASE}/generate-faq"
