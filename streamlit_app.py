@@ -1,9 +1,11 @@
+import os
 import json
 import requests
 import streamlit as st
 from PIL import Image
+from dotenv import load_dotenv
 
-API_BASE = "https://pfa-faq-generator-production.up.railway.app"
+API_BASE = os.environ.get("API_BASE")
  
 
 ENDPOINT = f"{API_BASE}/generate-faq"
